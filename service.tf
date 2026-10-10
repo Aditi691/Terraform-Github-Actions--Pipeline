@@ -50,15 +50,6 @@ resource "aws_security_group" "sg" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
-  egress {
-    description = "Traffic to internet"
-    from_port   = 0
-    to_port     = 0
-    protocol    = "-1"
-    cidr_blocks = ["103.189.135.190/32"]
-  }
-
-
 }
 
 resource "aws_instance" "myInstance" {
