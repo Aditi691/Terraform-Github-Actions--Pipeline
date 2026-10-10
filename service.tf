@@ -50,6 +50,7 @@ resource "aws_instance" "myInstance" {
   instance_type          = "t3.micro"
   subnet_id              = aws_subnet.mySub.id
   vpc_security_group_ids = [aws_security_group.sg.id]
+  iam_instance_profile   = aws_iam_instance_profile.ec2-ssm-profile.name
   user_data_base64       = filebase64("userdata.sh")
 
 
